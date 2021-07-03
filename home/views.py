@@ -6,3 +6,9 @@ def home(request):
 
 def curation(request):
     return render(request,'curator_page.html')
+
+def sh_page(request):
+    return render(request,'curator_page1.html')
+
+def zip_page(request):
+    return render(request,'curator_page2.html')

@@ -33,16 +33,13 @@
                 <li><a href="{%url 'home' %}">Home</a></li>
                 <li><a href="{% url 'curation' %}">Curation</a></li>
                 <li><a href="{% url 'homeitem' %}">Products</a></li>
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'mypage' username=user.username %}">MyPage</a></li>
-                {% endif %}
             </ul>
         </div>
         <div class="navbar__right">
             <div class="navbar__icons">
-                <a class="icons-new-curation" href="../pick_board/pick_board.html">
-                    <i class="fas fa-plus"></i>
-                    <span>새 큐레이션</span>
+                <a class="icons-new-curation" href="{% url 'new' %}">
+                    <i class="fas fa-plus" style="color:gold"></i>
+                    <span href="{% url 'new' %}" style="color:white">&nbsp새 큐레이션</span>
                 </a>
                 <div class="icons-login">
                     {% if user.is_authenticated %}
@@ -60,7 +57,7 @@
     <div class="search-container">
         <div class="search-container2">
             <div class="input-group mb-3 search-input">
-                <input type="text" class="form-control" placeholder="컨셉, 제품명, 태그 등을 입력하세요."
+                <input type="text" class="form-control" placeholder="컨셉, 제품명, 태그 등으로 검색하기"
                     aria-label="컨셉, 제품명, 태그 등을 입력하세요." aria-describedby="button-addon2">
                 <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button> -->
                 <button id="search"><i class="fas fa-search icon"></i></button>
@@ -88,7 +85,7 @@
             </ul>
             {% if user.is_authenticated %}
             <a class="product-create" href="{% url 'newitem' %}">
-                <i class="fas fa-plus"></i>
+                <i class="fas fa-plus" style="color:gold"></i>
                 <span>새로운 제품 등록하기</span>
             </a>
             {% endif %}
@@ -104,8 +101,7 @@
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{item.name}}</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
+                            <p class="card-text">가격: {{item.price}}</p>
                             <a href={% url 'detailitem' index=item.pk %}>상품 자세히 보기</a>
                         </div>
                     </div>
@@ -121,7 +117,7 @@
                         <img src="{{item.image.url}}" class="card-img-top" /><br>
                         {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title">상품명: {{item.name}}</h5>
+                            <h5 class="card-title">{{item.name}}</h5>
                             <p class="card-text">가격: {{item.price}}</p>
                             <a href={% url 'detailitem' index=item.pk %}>상품 자세히 보기</a>
                         </div>

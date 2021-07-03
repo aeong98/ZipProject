@@ -20,6 +20,36 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="navbar__left">
+            <div class="navbar__logo">
+                <a href="">ZIP</a>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="{%url 'home' %}">Home</a></li>
+                <li><a href="{% url 'curation' %}">Curation</a></li>
+                <li><a href="{% url 'homeitem' %}">Products</a></li>
+            </ul>
+        </div>
+        <div class="navbar__right">
+            <div class="navbar__icons">
+                <a class="icons-new-curation" href="{% url 'new' %}">
+                    <i class="fas fa-plus" style="color:gold"></i>
+                    <span href="{% url 'new' %}" style="color:white">새 큐레이션</span>
+                </a>
+                <div class="icons-login">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'mypage' username=user.username %}">마이페이지</a>
+                    <a href="{% url 'logout' %}">로그아웃</a>
+                    {% else%}
+                    <a href="{% url 'signup' %}">회원가입</a>
+                    <a href="{% url 'login' %}">로그인</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="header">
             <div class="profile">

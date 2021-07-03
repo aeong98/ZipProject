@@ -32,16 +32,13 @@
                 <li><a href="{%url 'home' %}">Home</a></li>
                 <li><a href="{% url 'curation' %}">Curation</a></li>
                 <li><a href="{% url 'homeitem' %}">Products</a></li>
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'mypage' username=user.username %}">MyPage</a></li>
-                {% endif %}
             </ul>
         </div>
         <div class="navbar__right">
             <div class="navbar__icons">
-                <a class="icons-new-curation" href="../pick_board/pick_board.html">
-                    <i class="fas fa-plus"></i>
-                    <span>새 큐레이션</span>
+                <a class="icons-new-curation" href="{% url 'new' %}">
+                    <i class="fas fa-plus" style="color:gold"></i>
+                    <span href="{% url 'new' %}" style="color:white">&nbsp새 큐레이션</span>
                 </a>
                 <div class="icons-login">
                     {% if user.is_authenticated %}
@@ -59,11 +56,12 @@
     <!-- 01. 검색창 -->
     <div class="search-container">
         <div class="search-container2">
+            <h1 class="headline">ZIP</h1>
             <div class="search-info">
-                <span>다른 사람의 인테리어 큐레이션을 구경해보세요</span>
+                <span>다양한 인테리어 컬렉션을 구경해보세요</span>
             </div>
             <div class="input-group mb-3 search-input">
-                <input type="text" class="form-control" placeholder="컨셉, 제품명, 태그 등을 입력하세요."
+                <input type="text" class="form-control" placeholder="컨셉, 제품명, 태그 등으로 검색하기"
                     aria-label="컨셉, 제품명, 태그 등을 입력하세요." aria-describedby="button-addon2">
                 <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button> -->
                 <button id="search"><i class="fas fa-search icon"></i></button>
@@ -72,6 +70,7 @@
                 <span><a href="">#내추럴</a></span>
                 <span><a href="">#원룸</a></span>
                 <span><a href="">#감성포스터</a></span>
+                <span><a href="">#인센스스틱</a></span>
             </div>
         </div>
     </div>
@@ -83,37 +82,37 @@
                 <span>인기 큐레이터</span>
             </div>
             <div class="popluar-curators-subtitle">
-                <span>취향과 개성이 드러나는 큐레이터를 소개합니다.</span>
+                <span>최근 일주일 동안 가장 인기 있었던 큐레이터를 소개합니다.</span>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col" >
                 <div class="card">
-                    <img src="{% static 'images/myphoto.jpg' %}" class="card-img-top" alt="...">
+                    <img src="../static/images/myphoto.jpg" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">김서연 큐레이터</h5>
-                        <p class="card-text">인테리어에 관심이 많은 실내디자인학과 학생입니다.</p>
-                        <a href="{% url 'mypage' username='curator' %}" class="btn btn-light">큐레이션 보러가기</a>
+                        <a class="card-title">김서연</a> <a class="crt">&nbsp큐레이터</a>
+                        <p class="card-text">인테리어에 관심이 많은<br>실내디자인학과 학생입니다</p>
+                        <a href="#" class="btn btn-light">큐레이션 보러가기</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" >
                 <div class="card">
-                    <img src="{% static 'images/minji.jpg' %}" class="card-img-top" alt="...">
+                    <img src="../static/images/minji.jpg" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">minji 큐레이터</h5>
-                        <p class="card-text">안녕하세요~ 자기소개입니다 야호</p>
-                        <a href="{% url 'mypage' username='minji' %}" class="btn btn-light">큐레이션 보러가기</a>
+                        <a class="card-title">MINJI</a> <a class="crt">&nbsp큐레이터</a>
+                        <p class="card-text">안녕하세요~<br></b>자기소개입니다 야호</p>
+                        <a href="#" class="btn btn-light">큐레이션 보러가기</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" >
                 <div class="card">
-                    <img src="{% static 'images/min.jpg' %}" class="card-img-top" alt="...">
+                    <img src="../static/images/min.jpg" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">min 큐레이터</h5>
-                        <p class="card-text">자기소개입니당</p>
-                        <a href="{% url 'mypage' username='min' %}" class="btn btn-light">큐레이션 보러가기</a>
+                        <a class="card-title">MIN</a> <a class="crt">&nbsp큐레이터</a>
+                        <p class="card-text">자기소개입니당<br>인테리어가 취미입니당</p>
+                        <a href="#" class="btn btn-light">큐레이션 보러가기</a>
                     </div>
                 </div>
             </div>
@@ -149,7 +148,7 @@
 
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="{% static 'images/test2.png' %}" class="d-block w-100" alt="...">
+                <img src="{% static 'images/test2.jpg' %}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Second slide label</h5>
                     <p>Some representative placeholder content for the second slide.</p>
@@ -172,7 +171,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
+    <br><br>
 
 </body>
 
