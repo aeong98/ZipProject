@@ -129,14 +129,14 @@ button{
     width: 100%;
     height: 100%;
     vertical-align: middle;
-    filter: brightness(80%);
+    filter: brightness(70%);
 }
 
 .box-text {
     padding: 5px 10px;
     font-size: 2rem;
     color:white;
-	text-align: center;
+	text-align: left;
 	position: absolute;
 	top: 10%;
 	left: 10%;
