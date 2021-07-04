@@ -22,8 +22,37 @@
 </head>
 
 <body>
-    <div class="container">
+    <nav class="navbar">
+        <div class="navbar__left">
+            <div class="navbar__logo">
+                <a href="">ZIP</a>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="{%url 'home' %}">Home</a></li>
+                <li><a href="{% url 'curation' %}">Curation</a></li>
+                <li><a href="{% url 'homeitem' %}">Products</a></li>
+            </ul>
+        </div>
+        <div class="navbar__right">
+            <div class="navbar__icons">
+                <a class="icons-new-curation" href="{% url 'new' %}">
+                    <i class="fas fa-plus" style="color:gold"></i>
+                    <span href="{% url 'new' %}" style="color:white">&nbsp새 큐레이션</span>
+                </a>
+                <div class="icons-login">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'mypage' username=user.username %}">마이페이지</a>
+                    <a href="{% url 'logout' %}">로그아웃</a>
+                    {% else%}
+                    <a href="{% url 'signup' %}">회원가입</a>
+                    <a href="{% url 'login' %}">로그인</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container">
         <div class="form-container">
             <!-- 상품 정보 -->
             <h1>{{item.name}}</h1>
@@ -38,8 +67,8 @@
             <a href={% url 'homeitem' %}>홈으로</a>
             <!-- 글 작성자=이용자면 수정/삭제 띄우기 -->
             {% if item.user|stringformat:"s" == user.username|stringformat:"s" %}
-            <a href={% url 'edititem' index=item.pk %}>수정하기</a>
-            <a href={% url 'deleteitem' pk=item.pk %}>삭제하기</a>
+            <a href={% url 'edititem' index=item.pk %}>&nbsp수정하기</a>
+            <a href={% url 'deleteitem' pk=item.pk %}>&nbsp삭제하기</a>
             {% endif %}
             <br><br>
             <!-- 좋아요 -->
@@ -52,6 +81,7 @@
                 <!-- <i class="far fa-heart"></i> -->
                 {% endif %}
             </a>
+            <br><a href="#">컬렉션에 추가하기</a>
             <!-- 댓글 -->
             <br><br>
             <hr><br>

@@ -16,8 +16,7 @@ a{
     color: var(--sub-text-color);
 }
 a:hover{
-    color: #fff;
-    font-weight: bold;
+    color: rgb(94, 10, 251);
 }
 button{
     border:0;
