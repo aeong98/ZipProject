@@ -1,7 +1,7 @@
 **2021.7.4 작성한 것들 다듬은 파일**
 
 < clone 시 주의할 점 >
-- clone 코드 : git clone -b sumi --single-branch https://github.com/LikeZipper/ZipProject.git
+- clone 코드 : git clone -b sumi2 --single-branch https://github.com/LikeZipper/ZipProject.git
 - 그냥 clone 받으면 myproject 폴더가 비어있으므로 압축된 myproject.zip 파일 사용하기
 - pip3 install django
 - pip3 install pillow
