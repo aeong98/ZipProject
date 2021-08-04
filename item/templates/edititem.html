@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
+{% extends 'base.html' %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
     <title>Edit Item</title>
-</head>
 
-<body>
-    <h1>Edit Item</h1>
-
+    <br><h1>Edit Item</h1>
     <form method="POST" enctype='multipart/form-data'>
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit">저장하기</button>
     </form>
 
-</html>
+{% endblock %}

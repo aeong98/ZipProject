@@ -3,10 +3,6 @@ from django.utils import timezone
 from .models import Content, Image
 from .forms import ContentForm
 # Create your views here.
-def home(request):
-    posts = Content.objects.all()
-    return render(request, 'home.html', {'posts_list':posts})
-
 def new(request):
     if request.method == 'POST': form = ContentForm(request.POST,request.FILES)
     else: form = ContentForm()
