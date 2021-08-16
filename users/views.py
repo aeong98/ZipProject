@@ -5,7 +5,6 @@ from rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from rest_auth.registration.serializers import SocialLoginSerializer
 
-# Create your views here.
 def index(request):
     return render(request, 'index.html')
 
