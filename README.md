@@ -5,6 +5,7 @@
 - 소셜로그인-구글 : http://127.0.0.1:8000/users/auth/google
 - 소셜로그인-네이버 : http://127.0.0.1:8000/users/auth/naver
 
+
 - 상품추가 : http://127.0.0.1:8000/product/add
 - 상품정보수정/삭제 : http://127.0.0.1:8000/product/add/n (n은 상품게시글의 id 값)(예:http://127.0.0.1:8000/product/add/1/)
 - 상품댓글작성 : http://127.0.0.1:8000/product/comment
