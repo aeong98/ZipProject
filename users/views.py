@@ -1,13 +1,22 @@
+import re
 from django.shortcuts import render
+
+#for Social Login
 from allauth.socialaccount.providers.naver.views import NaverOAuth2Adapter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from rest_auth.registration.serializers import SocialLoginSerializer
 
+# for Profile
+from rest_framework import response, viewsets
+from .models import CustomUser
+from .serializers import CustomUserSerializer
+
 def index(request):
     return render(request, 'index.html')
 
+# Social Login
 class NaverLogin(SocialLoginView):
     adapter_class = NaverOAuth2Adapter
     client_class = OAuth2Client
@@ -27,3 +36,22 @@ class GoogleLogin(SocialLoginView):
         serializer_class = self.get_serializer_class()
         kwargs['context'] = self.get_serializer_context()
         return serializer_class(*args, **kwargs)
+
+# Profile 
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+    lookup_field = 'username'
+
+user_list = UserViewSet.as_view({
+    'get': 'list'
+    })
+
+profile = UserViewSet.as_view({
+    'get' : 'retrieve'
+})
+
+profile_edit = UserViewSet.as_view({
+    'get' : 'retrieve',
+    'put' : 'update'
+})
