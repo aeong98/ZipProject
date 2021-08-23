@@ -13,9 +13,23 @@
 - 소셜로그인-네이버 : http://127.0.0.1:8000/users/auth/naver
 <br>
 
-- 상품추가 : http://127.0.0.1:8000/product/add
-- 상품정보수정/삭제 : http://127.0.0.1:8000/product/add/{id} ({id}는 상품게시글의 id 값(숫자) / 예:http://127.0.0.1:8000/product/add/1)
-- 상품댓글작성 : http://127.0.0.1:8000/product/comment
-- 상품댓글수정/삭제 : http://127.0.0.1:8000/product/comment/{id} ({id}는 상품댓글의 id 값)
-- 상품태그작성 : http://127.0.0.1:8000/product/tag (이 페이지에서 작성한 tag를 상품추가 페이지에서 선택 가능)
-- 상품태그수정/삭제 : http://127.0.0.1:8000/product/tag/{id} ({id}는 상품태그의 id 값)
+- 상품 추가 : http://127.0.0.1:8000/product/add
+- 상품 정보 수정/삭제 : http://127.0.0.1:8000/product/add/{id} ({id}는 상품게시글의 id 값(숫자) / 예:http://127.0.0.1:8000/product/add/1)
+- 전체 상품 리스트 : http://127.0.0.1:8000/product/productlist
+- 상품 댓글 작성 : http://127.0.0.1:8000/product/comment
+- 상품 댓글 수정/삭제 : http://127.0.0.1:8000/product/comment/{id}
+- 전체 상품 댓글 리스트 : http://127.0.0.1:8000/product/commentlist
+- 상품 태그 작성 : http://127.0.0.1:8000/product/tag (이 페이지에서 작성한 tag를 상품추가 페이지에서 선택 가능)
+- 상품 태그 수정/삭제 : http://127.0.0.1:8000/product/tag/{id}
+- 전체 상품 태그 리스트 : http://127.0.0.1:8000/product/taglist
+<br>
+
+- 큐레이션 추가 : http://127.0.0.1:8000/curation/add
+- 큐레이션 정보 수정/삭제 : http://127.0.0.1:8000/curation/add/{id}
+- 전체 큐레이션 리스트 : http://127.0.0.1:8000/curation/curationlist
+- 큐레이션 댓글 작성 : http://127.0.0.1:8000/curation/comment
+- 큐레이션 댓글 수정/삭제 : http://127.0.0.1:8000/curation/comment/{id}
+- 전체 큐레이션 댓그 리스트 : http://127.0.0.1:8000/curation/commentlist
+- 큐레이션 태그 작성 : http://127.0.0.1:8000/curation/tag
+- 큐레이션 태그 수정/삭제 : http://127.0.0.1:8000/curation/tag/{id}
+- 전체 큐레이션 태그 리스트 : http://127.0.0.1:8000/curation/taglist
