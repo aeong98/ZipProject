@@ -1,14 +1,14 @@
 from rest_framework import serializers
-from .models import Product,Product_comment,Tag
+from .models import Product,ProductComment,ProductTag
 
 class ProductCommentSerializer(serializers.ModelSerializer) :
     class Meta :
-        model = Product_comment
+        model = ProductComment
         fields ='__all__'
 
-class TagSerializer(serializers.ModelSerializer):
+class ProductTagSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Tag
+        model = ProductTag
         fields ='__all__'
 
 class ProductSerializer(serializers.ModelSerializer) :

@@ -29,13 +29,14 @@ class Product(models.Model):
         ('수납/정리','수납/정리')
     }
     type = models.CharField(max_length=20,choices=TYPE_CHOICES,default='가구') #상품 카테고리
-    tags = models.ManyToManyField('Tag',blank=True)
+    tags = models.ManyToManyField('ProductTag',blank=True)
 
     def __str__(self):
         return str(self.title)
 
-class Product_comment(models.Model) :
-    product = models.ForeignKey('Product',related_name='comments',on_delete=models.CASCADE)
+
+class ProductComment(models.Model) :
+    product = models.ForeignKey('Product',related_name='product_comments',on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
@@ -43,7 +44,7 @@ class Product_comment(models.Model) :
     def __str__(self):
         return str(self.product)
 
-class Tag(models.Model):
+class ProductTag(models.Model):
     name = models.CharField(max_length=10, unique=True,blank=True)
 
     def __str__(self):
