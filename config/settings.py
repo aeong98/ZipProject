@@ -160,6 +160,10 @@ REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'users.serializers.CustomRegisterSerializer',
 }
 
+REST_AUTH_SERIALIZERS = {
+    'LOGIN_SERIALIZER': 'users.serializers.CustomLoginSerializer',
+}
+
 #Social Login
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
