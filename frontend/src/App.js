@@ -14,6 +14,7 @@ import itemAdd from './components/pages/ItemAdd';
 import Signin from './components/pages/Signin';
 import Profile from './components/pages/Profile';
 import axios from 'axios';
+import BookMarkProduct from './components/component/BookMarkProduct';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path='/item-add' component={itemAdd} />
           <Route path='/sign-in' component={Signin} />
           <Route path='/profile' component={Profile} />
+          <Route path='/test' component={BookMarkProduct} />
         </Switch>
       </Router>
     </>

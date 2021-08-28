@@ -29,6 +29,7 @@ a:hover{
   color: black;
   justify-self: start;
   margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -161,4 +162,5 @@ a:hover{
     color: #242424;
     transition: 250ms;
   }
+  
 }

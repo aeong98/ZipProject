@@ -16,7 +16,7 @@ const ProductCategory=({match})=> {
 
   // product list 가져오기
   const renderProduct = async()=> {
-    const response =  await axios.get('/product/product-list/')
+    const response =  await axios.get('/product/productlist/')
     let result=[]
     response.data.map((data)=>{
       if(data.type.includes(match.params.category)){

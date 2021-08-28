@@ -1,10 +1,11 @@
 import React , {useState} from 'react';
 import '../../App.css';
 import '../css/Products.css'
+import '../css/CurationAdd.css'
 import { Modal , Button} from 'react-bootstrap';
 import axios from 'axios';
-import { Link , withRouter} from 'react-router-dom';
 import CurationAddForm from '../forms/CurationAddForm';
+
 const ProductAdd = ()=>{
     const [show, setShow] = useState(false);
 
@@ -82,7 +83,7 @@ const ProductAdd = ()=>{
     }
     return(
         <>
-        <Button variant="primary" onClick={handleShow}  aria-labelledby="example-modal-sizes-title-lg">
+        <Button variant="primary" onClick={handleShow}  aria-labelledby="example-modal-sizes-title-lg" className="add-btn">
             큐레이션 만들기
         </Button>
 

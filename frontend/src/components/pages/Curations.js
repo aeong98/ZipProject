@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
+
 import '../../App.css';
+import '../css/Curations.css';
+
 import CurationCards from '../CurationCards';
 import axios from 'axios';
-import CurationAdd2 from './CurationAdd2';
-import { Link } from 'react-router-dom';
-import {Button} from 'react-bootstrap';
-import CurationAdd3 from './CurationAdd3';
 import CurationAdd from '../component/CurationAdd';
+
 
 
 // csrf token 설정
@@ -19,7 +19,7 @@ const Curations=()=> {
 
   // curation list 가져오기
   const renderCuration = async()=> {
-    const response =  await axios.get('/curation/curationlist/')
+    const response =  await axios.get('/api/curationlist/')
     setCurations(response.data);
     console.log(response.data);
   }
@@ -34,8 +34,13 @@ const Curations=()=> {
   return(
     <>
       <div className="curation-container">
-        <CurationAdd/>
-        <CurationCards title="인기 큐레이션" data={curations}/>
+        <div className="curation-container-header">
+          <div className="curation-title-box">큐레이션</div>
+          <div className="curation-add-box">  
+          <CurationAdd />
+          </div>
+        </div>
+        <CurationCards data={curations}/>
       </div>
 
     </>

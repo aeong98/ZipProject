@@ -22,7 +22,7 @@
 }
 .curation-detail-right{
     width:50%;
-    padding-left: 100px;
+    padding-left: 10%;
 }
 .curation-thumbnail{
     width:100%;
@@ -52,6 +52,4 @@
 .curation-products{
     width: 1000px !important;
 }
-.cards__wrapper{
-    width: 1000px !important;
-}
+
