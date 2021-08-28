@@ -1,0 +1,12 @@
+Django==3.2.6
+django-allauth==0.45.0
+django-bootstrap3==15.0.0
+django-bootstrap4==3.0.1
+django-cors-headers==3.7.0
+django-rest-auth==0.9.5
+django-rest-framework==0.1.0
+django-seed==0.2.2
+djangorestframework==3.12.4
+Pillow==8.3.1
+sqlparse==0.4.1
+
