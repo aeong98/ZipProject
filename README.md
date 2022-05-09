@@ -1,61 +1,135 @@
-# ZipProject
-
-### Git 명령어 정리
-- 특정 branch clone 받기 :
-
-  git clone -b {branchname} --single-branch https://github.com/ZipProject-Likelion/ZipProject.git
- 
-
-### 폴더 구조 정리
-
-- backend 폴더 : django project localhost:8000
-- frontend 폴더 : react project localhost:3000
-
-### 깃 branch 규칙
-
-- 1. git branch는 기능별로 나눠서 (ex. backend-login, frontend-home)
-- 2. commit 메시지는 `frontend-추가하거나 바뀐 기능`
-
-### frontend 시작 방법
-- node js, npm 명령어 설치
-- cd frontend
-- `npm i` : 관련 패키지 설치
-- `npm run start` : 리액트 시작
+## ❝ 자유롭게 만들고 공유하는 나만의 인테리어, ZIP **❞**
 
 
-### backend 수정사항
+ZIP 은 인테리어 큐레이션 커뮤니티 서비스 입니다.
 
-- 처음 python3 manage.py runserver 시에 나오는 화면은 상품추가 url만 표시함
-- 회원가입폼과 상품추가 폼의 양식이 달라 한 화면에 띄우지 못함
-- 아래 url을 주소창에 입력하여 접속시 문제 없음
-- 해당 사항 참고 부탁드립니다!
-<br>
+코로나로 인해 집 안에서의 활동 시간이 늘어나면서 집이라는 공간의 역할과 인식의 변화가 생겨났습니다. 집은 휴식 뿐만 아니라 업무까지 할 수 있는 공간으로 변모했죠.
 
-## URL 정리
-- 회원가입 : http://127.0.0.1:8000/users/auth/register
-- 로그인 : http://127.0.0.1:8000/users/auth/login
-- 로그아웃 : http://127.0.0.1:8000/users/auth/logout
-- 소셜로그인-구글 : http://127.0.0.1:8000/users/auth/google
-- 소셜로그인-네이버 : http://127.0.0.1:8000/users/auth/naver
-<br>
+자연스럽게 사람들의 인테리어에 대한 관심은 늘어났지만, 온라인 상에서 인테리어 및 인테리어 상품 정보를 체계적으로 수집하는데에는 여러 어려움이 있었습니다.
 
-- 상품 추가 : http://127.0.0.1:8000/product/add
-- 상품 정보 수정/삭제 : http://127.0.0.1:8000/product/add/{id} ({id}는 상품게시글의 id 값(숫자) / 예:http://127.0.0.1:8000/product/add/1)
-- 전체 상품 리스트 : http://127.0.0.1:8000/product/productlist
-- 상품 댓글 작성 : http://127.0.0.1:8000/product/comment
-- 상품 댓글 수정/삭제 : http://127.0.0.1:8000/product/comment/{id}
-- 전체 상품 댓글 리스트 : http://127.0.0.1:8000/product/commentlist
-- 상품 태그 작성 : http://127.0.0.1:8000/product/tag (이 페이지에서 작성한 tag를 상품추가 페이지에서 선택 가능)
-- 상품 태그 수정/삭제 : http://127.0.0.1:8000/product/tag/{id}
-- 전체 상품 태그 리스트 : http://127.0.0.1:8000/product/taglist
-<br>
+<br></br>
 
-- 큐레이션 추가 : http://127.0.0.1:8000/curation/add
-- 큐레이션 정보 수정/삭제 : http://127.0.0.1:8000/curation/add/{id}
-- 전체 큐레이션 리스트 : http://127.0.0.1:8000/curation/curationlist
-- 큐레이션 댓글 작성 : http://127.0.0.1:8000/curation/comment
-- 큐레이션 댓글 수정/삭제 : http://127.0.0.1:8000/curation/comment/{id}
-- 전체 큐레이션 댓그 리스트 : http://127.0.0.1:8000/curation/commentlist
-- 큐레이션 태그 작성 : http://127.0.0.1:8000/curation/tag
-- 큐레이션 태그 수정/삭제 : http://127.0.0.1:8000/curation/tag/{id}
-- 전체 큐레이션 태그 리스트 : http://127.0.0.1:8000/curation/taglist
+## ✅ 기능 상세
+
+### 1. 단일 상품 업로드
+
+" 상품 이미지, 판매처, 가격, 종류, 키워드 태그 " 
+
+![image](https://user-images.githubusercontent.com/51521314/167386869-886e4b96-f5ac-4d25-80d3-9bfd2c2e75f5.png)
+
+인테리어 상품의 이미지, 판매처, 가격 등을 업로드하여 인테리어 쇼핑몰처럼 상품 정보를 모아 볼 수 있습니다.
+
+상품에 등록되는 키워드 태그는 더욱 세부적이고 회원님의 취향에 맞는 검색 결과를 제공하는데 사용됩니다.
+
+---
+
+### 2. 큐레이션 생성 및 공유
+
+" 단일 상품을 큐레이션에 추가하여 자유롭게 만드는 인테리어 아이템 컬렉션 " 
+
+![image](https://user-images.githubusercontent.com/51521314/167386929-6fa10ba0-5ca6-4b88-8478-5821da874479.png)
+
+개인 큐레이션과 공유 큐레이션 두가지 옵션을 제공합니다.
+
+개인 큐레이션은 큐레이션을 생성한 주인만 해당 큐레이션에 상품을 추가할 수 있습니다.
+
+공유 큐레이션은 큐레이션을 생성한 주인 외에도 ZIP의 회원이라면 누구든 상품을 추가할 수 있습니다.
+
+다른 이용자들과 함께 공통된 주제의 인테리어 아이템들을 수집하고 공유해 보세요.
+
+---
+
+### 3. 나의 취향에 맞는 상품 및 큐레이션 추천
+
+" 이용자가 회원가입 과정에서 선택하는 관심 상품+큐레이션에 기반한 추천 시스템 " 
+
+![image](https://user-images.githubusercontent.com/51521314/167386990-61ae500d-a4ff-469c-8b4d-e9d349a1ad09.png)
+
+ZIP은 회원가입 단계에서 회워님께 무작위의 상품과 큐레이션 리스트를 제공합니다.
+
+해당 단계에서 관심있는 상품과 큐레이션을 선택하면, 회원님의 선택에 기반하여 취향에 맞는 상품과 큐레이션을 추천해 드립니다.
+
+<br></br>
+
+
+## ✅ 기술 스택 
+
+![image](https://user-images.githubusercontent.com/51521314/167386036-c2788202-3a60-414a-bea2-8c7be22e18be.png)
+
+
+## Application
+
+<aside>
+📎 Django(REST) / React
+
+</aside>
+
+### Backend : Django REST Framework
+
+- Django REST Framework를 이용해 REST API를 구현했습니다.
+- 로그인 기능은 JWT 방식으로 구현했습니다
+
+### Frontend : React
+
+- Frontend는 React를 통해 함수형 컴포넌트 방식으로 개발했습니다.
+- 서버와의 API 통신을 위해 Axios 라이브러리를 사용했습니다.
+
+## Database
+
+<aside>
+📎 MySQL / Amazon RDS / Amazon S3
+
+</aside>
+
+### MySQL을 Amazon RDS에 올려 사용
+
+- MySQL : 가장 보편적인 RDBMS(Relational Database Management System)
+→ 기존에 설계한 관계형 스키마를 구현하기에 가장 적절하다고 판단했습니다.
+- MySQL을 RDS 클라우드에 올려 개발 과정에서도 동일한 Database 위에서 업무를 진행할 수 있는 환경을 구축했습니다.
+- RDS는 스케일링과 모니터링이 편리하기 때문에, 다뤄야 하는 데이터의 규모가 늘어나도 서비스의 확장이 용이하다는 장점이 있습니다.
+
+### S3 Bucket : 이미지 업로드를 위한 클라우드 스토리지
+
+- 서비스 특성상 이미지 파일의 업로드가 자주 일어납니다.
+- 클라우드 스토리지 S3 Bucket을 연동하여 정적 파일들을 저장 및 관리했습니다.
+
+## Server
+
+<aside>
+📎 Amazon EC2 / Docker / NGINX
+
+</aside>
+
+### 서비스의 가용성을 높이기 위한 NGINX 와 Docker
+
+- NGINX는 동시접속 처리에 특화된 웹서버로, 리버스 프록시(reverse proxy)를 통한 로드 밸런싱(load balancing) 기능을 제공합니다.다. 이를 이용해 유저 트래픽이 증가했을 때를 대비하고자 하였습니다.
+- Docker를 이용한 서비스 컨테이너화를 통해 개발 환경과 배포 환경을 통일함으로써 지속적이고 편리한 개발 환경을 구축하였습니다.
+
+### Amazon EC2 Server
+
+- Docker를 이용해 서비스를 컨테이너화 한 다음, 이를 AWS EC2에 올려 배포했습니다.
+
+
+<br></br>
+
+## ✅ 테스트
+
+- 아이디 : test1234
+- 비밀번호 : test1234@
+
+[👉 ZIP 사용해보기](http://13.124.164.255/)
+
+
+
+<br></br>
+
+
+## 🙆‍♀️ ZIP 만든 사람들
+
+- 길민지    백엔드 개발자(회원관리 API 개발, 데이터베이스 관리)
+
+- 김서연    프론트엔드 총괄 개발자
+
+- 김수미    백엔드 개발자(상품/큐레이션 관리 API 개발, 추천 시스템 설계)
+
+- 임유경    총괄 디자이너
